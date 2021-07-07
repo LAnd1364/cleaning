@@ -1,0 +1,65 @@
+html {
+   box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+   box-sizing: inherit;
+}
+body {
+   min-height: 100vh;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd,
+input,
+button,
+textarea,
+select {
+   margin: 0;
+   background-color: transparent;
+   border: none;
+}
+ul[class],
+ol[class],
+input,
+button,
+textarea,
+select {
+   padding: 0;
+}
+ul[class] {
+   list-style: none;
+}
+img {
+   max-width: 100%;
+   display: block;
+}
+input,
+button,
+textarea,
+select {
+   font: inherit;
+   resize: none;
+}
+a {
+   text-decoration: none;
+   color: inherit;
+}
+button {
+   color: inherit;
+   cursor: pointer;
+}
