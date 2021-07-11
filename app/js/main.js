@@ -1,4 +1,26 @@
 // --------------------------------------------------order-btn--------------------------------------------------------
+$(window).scroll(function(){
+  var scroll = $(window).scrollTop();
+  var position = $(".cleaning").position(); 
+  if(scroll > 10){
+    $('.order__circle').addClass('order__circle--scale');
+    $('.order').addClass('order--down');
+  }
+  else if(scroll < 10){
+    $('.order__circle').removeClass('order__circle--scale');
+    $('.order').removeClass('order--down');
+  }
+
+  if (scroll > (position.top - 500)) { 
+    $(".order").addClass(
+        "order--fadeout");
+  }
+  else {
+      $(".order").removeClass(
+          "order--fadeout");
+  } 
+})
+// --------------------------------------------------------------------
 $('.order').mousemove(function (e) {
  
   var i = $(".order__circle"),
@@ -6,15 +28,15 @@ $('.order').mousemove(function (e) {
       o = e.pageY - i.offset().top;
   
   TweenMax.to($('.order__circle'), .3, {
-    x: (s - i.width() / 2) / i.width() * 50,
-    y: (o - i.height() / 2) / i.height() * 50,
+    x: (s - i.width() / 2) / i.width() * 55,
+    y: (o - i.height() / 2) / i.height() * 55,
     // scale: 1.2,
     // ease: Power2.easeOut
   })
   
   TweenMax.to($('.order__text'), .3, {
-    x: (s - i.width() / 2) / i.width() * 80,
-    y: (o - i.height() / 2) / i.height() * 80,
+    x: (s - i.width() / 2) / i.width() * 88,
+    y: (o - i.height() / 2) / i.height() * 88,
     ease: Power2.easeOut
   })
   
@@ -66,9 +88,11 @@ $('.menu-btn, .menu__item-link').on('click', function() {
  }
 });
 //--------------------------------------------advant-slider-------------------------------------------------------
-// $('.advant__list').slick({
- 
-// });
+if ($(window).width() < 51) {
+  $('.advant__list').slick({
+   
+  });
+}
 // -----------------------------------------------cleaning--------------------------------------------------------
 $('.cleaning__room-link').on('click', function(e) {
   e.preventDefault()
