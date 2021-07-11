@@ -1,4 +1,23 @@
-%poppins-700 {
-  font-family: 'Poppins-Bold', sans-serif;
+%TTTravels-700 {
+  font-family: 'TTTravels-Bold', sans-serif;
   font-weight: 700;
 }
+%TTTravels-600 {
+  font-family: 'TTTravels-DemiBold', sans-serif;
+  font-weight: 600;
+}
+%TTTravels-300 {
+  font-family: 'TTTravels-Light', sans-serif;
+  font-weight: 300;
+}
+%TTTravels-500 {
+  font-family: 'TTTravels-Medium', sans-serif;
+  font-weight: 500;
+}
+%TTTravels-400 {
+  font-family: 'TTTravels-Regular', sans-serif;
+  font-weight: 400;
+}
+
+$body: #404040;
+$accent: #5a30f0;
