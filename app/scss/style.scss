@@ -58,13 +58,25 @@
   left: 50%;
   z-index: 2;
   transform: translateX(-50%);
-  transition: 0.3s;
+  visibility: visible;
+  opacity: 1;
+  transition: .4s;
   &:hover {
     .order__circle::after {
       width: 135%;
       height: 135%;
       border: 1px solid rgba($accent, .3);
     }
+    .order__text {
+      transform: translateY(-50%) rotate(360deg);
+    }
+  }
+  &--down {
+    transform: translateX(-50%) translateY(22px);
+  }
+  &--fadeout {
+    visibility: hidden;
+    opacity: 0;
   }
   &__circle {
     width: 74%;
@@ -75,6 +87,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: .4s;
     &::after {
       content: '';
       width: 100%;
@@ -85,6 +98,9 @@
       position: absolute;
       transform: translate(-13%, -13%);
       transition: all .5s;
+    }
+    &--scale {
+      transform: translate(-50%, -50%) scale(.8);
     }
   }
   &__text {
@@ -99,54 +115,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%) rotate(345deg);
-  }
-}
-
-.order-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 195px;
-  height: 195px;
-  font-size: 18px;
-  line-height: 1.3;
-  font-weight: 500;
-  text-align: center;
-  text-transform: uppercase;
-  color: #fff;
-  background-color: $accent;
-  padding: 0 50px;
-  border-radius: 50%;
-  position: fixed;
-  z-index: 2;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%) rotate(345deg);
-  &::before {
-    content: '';
-    width: 135%;
-    height: 135%;
-    background-color: transparent;
-    border-radius: 50%;
-    position: absolute;
-  }
-  &::after {
-    content: '';
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    border: 1px solid $accent;
-    border: 1px solid transparent;
-    border-radius: 50%;
-    position: absolute;
-    transition: all .5s;
-  }
-  &:hover {
-    &::after {
-      width: 135%;
-      height: 135%;
-      border: 1px solid rgba($accent, .3);
-    }
+    transition: .4s;
   }
 }
 // ----------------------------------------------------------header------------------------------------------------------------
@@ -543,6 +512,7 @@
     }
   }
 }
+
 
 
 @import 'media';
