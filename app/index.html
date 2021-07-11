@@ -1,44 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+   <title>Уберем</title>
    <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
    
-
-      <div class="up-wrap">
-         <button class="up" id="up" onclick='window.scrollTo({top: 0, behavior: "smooth"});'>
-            <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 50 50" version="1.1">
-               <path fill="#243f4d" fill-rule="evenodd" d="M 28.050781 45.191406 L 21.816406 45.191406 C 20.101562 45.191406 18.699219 43.789062 18.699219  42.078125 L 18.699219 23.375 L 13.089844 23.375 C 11.84375 23.375 10.75 22.59375 10.285156 21.507812 C 9.820312 20.414062 9.972656 19.011719  10.90625 18.078125 L 23.84375 5.140625 C 24.46875 4.519531 25.398438 4.519531 26.023438 5.140625 L 38.960938 18.078125 C 39.894531 19.011719  40.046875 20.257812 39.582031 21.507812 C 39.117188 22.75 38.023438 23.375 36.777344 23.375 L 31.164062 23.375 L   31.164062 42.078125 C 31. 164062 43.789062 29.765625 45.191406 28.050781 45.191406 Z M 28.050781 45.191406 "/>
-            </svg>
+   <div class="container">
+   
+      <div class="menu-btn-wrap">
+         <div class="menu-btn-pre"></div>
+         <div class="menu-btn-buffer"></div>
+         <button class="menu-btn" onclick='window.scrollTo({top: 0, behavior: "smooth"});'>
+            <span class="menu-btn__line"></span>
+            <span class="menu-btn__line"></span>
          </button>
       </div>
-      <button class="menu__btn" id="menu-btn">
-         <span class="menu__btn-line"></span>
-         <span class="menu__btn-line"></span>
-         <span class="menu__btn-line"></span>
-      </button>
-
       
+       <a class="order" href="#">
+         <span class="order__circle"></span>
+         <span class="order__text">Заказать уборку</span>
+       </a>
 
-      <script>
-   //Get the button
-   var mybutton = document.getElementById("up");
-   
-   // When the user scrolls down 20px from the top of the document, show the button
-   window.onscroll = function() {scrollFunction()};
+      <header class="header">
+         <div class="header__top">
+            <a class="logo" href="#">
+               <img class="logo__img" src="images/logo.svg" alt="логотип">
+            </a>
+            <div class="header__place">
+               <a class="header__place-item header__place-item--active header__place-home" href="#">Дом</a>
+               <a class="header__place-item header__place-office" href="#">Офис</a>
+            </div>
+            <nav class="menu">
+               <ul class="menu__list">
+                  <li class="menu__item">
+                     <a class="menu__item-link" href="#">После ремонта</a>
+                  </li>
+                  <li class="menu__item">
+                     <a class="menu__item-link" href="#">Генеральная уборка</a>
+                  </li>
+                  <li class="menu__item">
+                     <a class="menu__item-link" href="#">Регулярная уборка</a>
+                  </li>
+                  <li class="menu__item">
+                     <a class="menu__item-link" href="#">Мойка окон</a>
+                  </li>
+               </ul>
+            </nav>
+            <div class="header__contact">
+               <a class="header__contact-phone" href="tel:+380674016977">+380 67 401 69 77</a>
+               <span class="header__contact-work_hours">24/7</span>
+            </div>
+            <button class="header__btn">
+               <span class="header__btn-line"></span>
+               <span class="header__btn-line"></span>
+            </button>
+         </div>
+         <div class="header__inner">
+            <div class="header__bg-wrap">
+               <img class="header__bg" src="images/header__bg.jpg" alt="фон">
+            </div>
+            <div class="header__content">
+               <div class="header__content-inner">
+                  <h1 class="header__title">Уборка квартир в Киеве </h1>
+                  <p class="header__subtitle">
+                     Мы уберем у вас дома или в офисе. Наведем чистоту после ремонта и проведем генеральную уборку. 
+                  </p>
+               </div>
+            </div>
+         </div>
+      </header>
 
-   function scrollFunction() {
-     if (document.body.scrollTop > 490 || document.documentElement.scrollTop > 490) {
-       mybutton.style.display = "block";
-     } else {
-       mybutton.style.display = "none";
-     }
-   }
-   </script>
+      <section class="advant">
+         <ul class="advant__list">
+            <li class="advant__item advant__item-card-1">
+               <div class="advant__item-inner">
+                  <h3 class="advant__item-title">Тщательно отобранный персонал</h3>
+               </div>
+               <p class="advant__item-text">
+                  Не нужно тратить время, силы и ресурсы на разме- щение вакансий, проведе- ние собеседований, про- верку кандидатов на должность уборщицы. За счет больших объемов мы можем сделать это эффективнее.
+               </p>
+            </li>
+            <li class="advant__item advant__item-card-2">
+               <div class="advant__item-inner">
+                  <h3 class="advant__item-title">Качественная эко-химия</h3>
+               </div>
+               <p class="advant__item-text">
+                  Не нужно тратить время, силы и ресурсы на разме- щение вакансий, проведе- ние собеседований, про- верку кандидатов на должность уборщицы. За счет больших объемов мы можем сделать это эффективнее.
+               </p>
+            </li>
+            <li class="advant__item advant__item-card-3">
+               <div class="advant__item-inner">
+                  <h3 class="advant__item-title">Контролируем качество</h3>
+               </div>
+               <p class="advant__item-text">
+                  Не нужно тратить время, силы и ресурсы на разме- щение вакансий, проведе- ние собеседований, про- верку кандидатов на должность уборщицы. За счет больших объемов мы можем сделать это эффективнее.
+               </p>
+            </li>
+            <li class="advant__item advant__item-card-4">
+               <div class="advant__item-inner">
+                  <h3 class="advant__item-title">Работаем круглосуточно</h3>
+               </div>
+               <p class="advant__item-text">
+                  Не нужно тратить время, силы и ресурсы на разме- щение вакансий, проведе- ние собеседований, про- верку кандидатов на должность уборщицы. За счет больших объемов мы можем сделать это эффективнее.
+               </p>
+            </li>
+         </ul>
+      </section>
+
+      <section class="cleaning">
+         <div class="cleaning__top">
+            <h2 class="cleaning__title">Как мы убираем</h2>
+            <p class="cleaning__text">
+               Клинер приезжает в назначенное время со всем необходимым и сразу приступает к делу. Вам остаётся только оценить результат.
+            </p>
+         </div>
+         <div class="cleaning__room">
+            <ul class="cleaning__room-list">
+               <li class="cleaning__room-item cleaning__room-item--active">
+                  <a class="cleaning__room-link" href="#">→ Кухня</a>
+               </li>
+               <li class="cleaning__room-item">
+                  <a class="cleaning__room-link" href="#">→ Комнаты</a>
+               </li>
+               <li class="cleaning__room-item">
+                  <a class="cleaning__room-link" href="#">→ Ванная</a>
+               </li>
+               <li class="cleaning__room-item">
+                  <a class="cleaning__room-link" href="#">→ Прихожая</a>
+               </li>
+            </ul>
+            <ul class="cleaning__images">
+               <li class="cleaning__images-item cleaning__images-item--active">
+                  <img class="cleaning__img" src="images/cleaning/1.jpg" alt="кухня">
+                  <div class="cleaning__img-pointer" id="pointer-fan">
+                     <span class="pointer-tooltip">Чистим фасад вытяжки</span>
+                  </div>
+                  <div class="cleaning__img-pointer" id="pointer-fridge">
+                     <span class="pointer-tooltip">Моем фасады кухонных</br>гарнитуров</span>
+                  </div>
+                  <div class="cleaning__img-pointer" id="pointer-cooker">
+                     <span class="pointer-tooltip">Чистим плиту</span>
+                  </div>
+                  <div class="cleaning__img-pointer" id="pointer-dustbin">
+                     <span class="pointer-tooltip">Выносим мусор</span>
+                  </div>
+                  <div class="cleaning__img-pointer" id="pointer-dishes">
+                     <span class="pointer-tooltip">Моем посуду</span>
+                  </div>
+                  <div class="cleaning__img-pointer" id="pointer-tabletop">
+                     <span class="pointer-tooltip">Протираем столешницу</span>
+                  </div>
+                  <div class="cleaning__img-pointer" id="pointer-floor">
+                     <span class="pointer-tooltip">Моем пол</span>
+                  </div>
+               </li>
+               <li class="cleaning__images-item">
+                  <img class="cleaning__img" src="images/cleaning/1.jpg" alt="комната">
+               </li>
+               <li class="cleaning__images-item">
+                  <img class="cleaning__img" src="images/cleaning/2.jpg" alt="ванная">
+               </li>
+               <li class="cleaning__images-item">
+                  <img class="cleaning__img" src="images/cleaning/2.jpg" alt="прихожая">
+               </li>
+            </ul>
+         </div>
+      </section>
+
+   </div>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
    <script src="js/main.min.js"></script>
 </body>
 </html>

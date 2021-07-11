@@ -1,39 +1,80 @@
-// ----------------------------------------------AOS------------------------------------------------
-// $(window).on("scroll", function () {
-//   AOS.init({
-//     // Global settings:
-//     disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-//     startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
-//     initClassName: 'aos-init', // class applied after initialization
-//     animatedClassName: 'aos-animate', // class applied on animation
-//     useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
-//     disableMutationObserver: false, // disables automatic mutations' detections (advanced)
-//     debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-//     throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
-    
+// --------------------------------------------------order-btn--------------------------------------------------------
+$('.order').mousemove(function (e) {
+ 
+  var i = $(".order__circle"),
+      s = e.pageX - i.offset().left,
+      o = e.pageY - i.offset().top;
   
-//     // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-//     offset: 220, // offset (in px) from the original trigger point
-//     delay: 0, // values from 0 to 3000, with step 50ms
-//     duration: 400, // values from 0 to 3000, with step 50ms
-//     easing: 'ease', // default easing for AOS animations
-//     once: false, // whether animation should happen only once - while scrolling down
-//     mirror: false, // whether elements should animate out while scrolling past them
-//     anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+  TweenMax.to($('.order__circle'), .3, {
+    x: (s - i.width() / 2) / i.width() * 50,
+    y: (o - i.height() / 2) / i.height() * 50,
+    // scale: 1.2,
+    // ease: Power2.easeOut
+  })
   
-//   });
+  TweenMax.to($('.order__text'), .3, {
+    x: (s - i.width() / 2) / i.width() * 80,
+    y: (o - i.height() / 2) / i.height() * 80,
+    ease: Power2.easeOut
+  })
+  
+});
+
+$('.order').mouseleave(function (e) {
+ 
+  var i = $(".order__circle"),
+      s = e.pageX - i.offset().left,
+      o = e.pageY - i.offset().top;
+  TweenMax.to($('.order__circle'), .3, {
+    x: 0,
+    y: 0,
+    // scale: 1,
+    // ease: Power2.easeOut
+  })
+  
+  TweenMax.to($('.order__text'), .3, {
+    x: 0,
+    y: 0,
+    ease: Power2.easeOut
+  })
+  
+});
+// ---------------------------------------------toggle-place-item-----------------------------------------------------------
+$('.header__place-item').on('click', function(e) {
+  e.preventDefault()
+  $('.header__place-item').removeClass('header__place-item--active');
+  $(this).addClass('header__place-item--active');
+});
+// ---------------------------------------------activate-menu-----------------------------------------------------------
+$('.menu-btn-pre').hover
+(function() {
+$('.header__top').addClass('header__top--active');
+});
+
+$('.header__inner, .header__contact-work_hours').hover
+(function() {
+$('.header__top').removeClass('header__top--active');
+});
+
+$('.menu-btn, .menu__item-link').on('click', function() {
+  if ($(window).width() < 728) {
+    $('.menu-btn').toggleClass('menu-btn--active');
+    $('.menu').toggleClass('menu--active');
+  }
+  else {
+
+ }
+});
+//--------------------------------------------advant-slider-------------------------------------------------------
+// $('.advant__list').slick({
+ 
 // });
+// -----------------------------------------------cleaning--------------------------------------------------------
+$('.cleaning__room-link').on('click', function(e) {
+  e.preventDefault()
+});
 
-$(function() {
-
-  // ----------------------------------------------smooth-nav------------------------------------------------
-  $('.logo__link, .menu__item-link, .footer__menu-item-link').on('click', function(e) {
-    e.preventDefault()
-    var id  = $(this).attr('href'),
-      top = $(id).offset().top;
-    $('body,html').animate({scrollTop: top}, 700);
-    // $('.menu__list').removeClass('menu__list--active');
-    // $('.menu__btn-line').removeClass('menu__btn-line--active');
-  });   
-
+$('.cleaning__room-item').on('click', function() {
+  $('.cleaning__room-item--active').removeClass('cleaning__room-item--active');
+  $(this).addClass('cleaning__room-item--active');
 });
