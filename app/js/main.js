@@ -1,37 +1,37 @@
 // --------------------------------------------------order-btn--------------------------------------------------------
 $(window).scroll(function(){
-  var scroll = $(window).scrollTop();
-  var position = $(".cleaning").position(); 
+  let scroll = $(window).scrollTop();
+  let position = $(".cleaning").position(); 
   if(scroll > 10){
-    $('.order__circle').addClass('order__circle--scale');
-    $('.order').addClass('order--down');
+    $('.order').addClass('order--scale');
   }
   else if(scroll < 10){
-    $('.order__circle').removeClass('order__circle--scale');
-    $('.order').removeClass('order--down');
+    $('.order').removeClass('order--scale');
   }
 
   if (scroll > (position.top - 500)) { 
-    $(".order").addClass(
-        "order--fadeout");
+    $(".order").addClass("order--fadeout");
   }
   else {
-      $(".order").removeClass(
-          "order--fadeout");
+      $(".order").removeClass("order--fadeout");
   } 
 })
 // --------------------------------------------------------------------
 $('.order').mousemove(function (e) {
  
-  var i = $(".order__circle"),
-      s = e.pageX - i.offset().left,
-      o = e.pageY - i.offset().top;
+  
+  let i = $(".order__circle"),
+  s = e.pageX - i.offset().left,
+  o = e.pageY - i.offset().top;
   
   TweenMax.to($('.order__circle'), .3, {
     x: (s - i.width() / 2) / i.width() * 55,
     y: (o - i.height() / 2) / i.height() * 55,
+    rotate: 15,
     // scale: 1.2,
-    // ease: Power2.easeOut
+
+
+    ease: Power2.easeOut
   })
   
   TweenMax.to($('.order__text'), .3, {
@@ -43,15 +43,17 @@ $('.order').mousemove(function (e) {
 });
 
 $('.order').mouseleave(function (e) {
- 
-  var i = $(".order__circle"),
-      s = e.pageX - i.offset().left,
-      o = e.pageY - i.offset().top;
+  
+  
+  let i = $(".order__circle"),
+  s = e.pageX - i.offset().left,
+  o = e.pageY - i.offset().top;
   TweenMax.to($('.order__circle'), .3, {
     x: 0,
     y: 0,
+    rotate: 0,
     // scale: 1,
-    // ease: Power2.easeOut
+    ease: Power2.easeOut
   })
   
   TweenMax.to($('.order__text'), .3, {
@@ -61,6 +63,7 @@ $('.order').mouseleave(function (e) {
   })
   
 });
+
 // ---------------------------------------------toggle-place-item-----------------------------------------------------------
 $('.header__place-item').on('click', function(e) {
   e.preventDefault()
