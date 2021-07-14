@@ -241,24 +241,32 @@
     grid-gap: 40px;
   }
   &__item {
+    margin-top: 500px;
     position: relative;
+    &--up {
+      margin-top: 0;
+    }
   }
   &__item-card-1 {
+    transition: .2s;
     & .advant__item-inner {
       background-image: url(../images/advant/1.png);
     }
   }
   &__item-card-2 {
+    transition: .4s;
     & .advant__item-inner {
       background-image: url(../images/advant/2.png);
     }
   }
   &__item-card-3 {
+    transition: .6s;
     & .advant__item-inner {
       background-image: url(../images/advant/3.png);
     }
   }
   &__item-card-4 {
+    transition: .8s;
     & .advant__item-inner {
       background-image: url(../images/advant/4.png);
     }
@@ -316,7 +324,6 @@
 }
 // --------------------------------------------------cleaning---------------------------------------------------------
 .cleaning {
-  padding-bottom: 140px;
   &__top {
     display: flex;
     justify-content: space-between;
@@ -335,16 +342,34 @@
     line-height: 1.4;
     padding-top: 15px;
   }
+  &__content {
+    &--active {
+      .cleaning__room-list {
+        width: 23.6%;
+        transform: translateX(0);
+      }
+      .cleaning__images-item {
+        max-width: 74%;
+        transform: translateX(17.5%);
+      }
+      .cleaning__img {
+        height: 100vh;
+      }
+      .cleaning__img-pointer {
+        opacity: 1;
+      }
+    }
+  }
   &__room-list {
-    display: none;
-    // display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     width: 26%;
     height: 100vh;
     background-color: $accent;
-    position: relative;
+    position: absolute;
     transform: translateX(-50vw);
+    transition: .5s .3s;
     &::before {
       content: 'Как мы убираем';
       font-size: 16px;
@@ -398,6 +423,7 @@
     max-width: 77%;
     width: 100%;
     position: absolute;
+    transition: .5s .3s;
     &--active {
       z-index: 1;
     }
@@ -408,12 +434,14 @@
     height: 630px;
     object-fit: cover;
     object-position: bottom right;
+    transition: .5s .3s;
   }
   &__img-pointer {
     width: 30px;
     height: 30px;
     background-color: $accent;
     border-radius: 50%;
+    opacity: 0;
     position: absolute;
     &::before {
       content: '';
@@ -452,30 +480,37 @@
   #pointer-fan {
     bottom: 84%;
     right: 67%;
+    transition: .4s .8s;
   }
   #pointer-fridge {
     bottom: 64%;
     right: 38%;
+    transition: .4s 1.1s;
   }
   #pointer-cooker {
     bottom: 52%;
     right: 73%;
+    transition: .4s 1.4s;
   }
   #pointer-dustbin {
     bottom: 48%;
     right: 53%;
+    transition: .4s 1.7s;
   }
   #pointer-dishes {
     bottom: 45%;
     right: 19%;
+    transition: .4s 2s;
   }
   #pointer-tabletop {
     bottom: 32%;
     right: 42%;
+    transition: .4s 2.3s;
   }
   #pointer-floor {
     bottom: 9%;
     right: 69%;
+    transition: .4s 2.5s;
   }
   .pointer-tooltip {
     display: block;
@@ -508,6 +543,14 @@
   }
 }
 
-
+// ---------------------------------------------@keyframes--------------------------------------------------------------
+// @keyframes card-1 {
+//   0% {
+//     margin-top: 150px;
+//   }
+//   100% {
+//     margin-top: 0;
+//   }
+// }
 
 @import 'media';

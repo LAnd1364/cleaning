@@ -1,22 +1,31 @@
 // --------------------------------------------------order-btn--------------------------------------------------------
 $(window).scroll(function(){
   let scroll = $(window).scrollTop();
-  let position = $(".cleaning").position(); 
   if(scroll > 10){
     $('.order').addClass('order--scale');
+    $('.advant__item').addClass('advant__item--up') //-----------advant__cards------------
   }
   else if(scroll < 10){
     $('.order').removeClass('order--scale');
   }
-
-  if (scroll > (position.top - 500)) { 
+  
+  let cleaningPosition = $(".cleaning").position(); 
+  if (scroll > (cleaningPosition.top - 150)) { 
     $(".order").addClass("order--fadeout");
   }
   else {
       $(".order").removeClass("order--fadeout");
-  } 
+  }
+
+  if (scroll > (cleaningPosition.top)) {
+    $(".cleaning__content").addClass("cleaning__content--active");
+    // $('html,body').animate({scrollTop: document.body.scrollHeight},"slow");
+  }
+  else if (scroll > (cleaningPosition.top - 500)) {
+    $(".cleaning__content").removeClass("cleaning__content--active");
+  }
 })
-// --------------------------------------------------------------------
+// --------------------------order-btn------------------------------------------
 $('.order').mousemove(function (e) {
  
   
