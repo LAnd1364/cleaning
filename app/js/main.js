@@ -1,37 +1,53 @@
 // --------------------------------------------------order-btn--------------------------------------------------------
 $(window).scroll(function(){
-  var scroll = $(window).scrollTop();
-  var position = $(".cleaning").position(); 
+  let scroll = $(window).scrollTop();
   if(scroll > 10){
-    $('.order__circle').addClass('order__circle--scale');
-    $('.order').addClass('order--down');
+    $('.order').addClass('order--scale');
+    $('.advant__item').addClass('advant__item--up') //-----------advant__cards------------
   }
   else if(scroll < 10){
-    $('.order__circle').removeClass('order__circle--scale');
-    $('.order').removeClass('order--down');
+    $('.order').removeClass('order--scale');
   }
-
-  if (scroll > (position.top - 500)) { 
-    $(".order").addClass(
-        "order--fadeout");
+  
+  let cleaningPosition = $(".cleaning").position(); 
+  // let bottom = $(".cleaning__images").position() + $(".cleaning__images").height(); //----------------------
+    if (scroll > (cleaningPosition.top - 150)) { 
+    $(".order").addClass("order--fadeout");
   }
   else {
-      $(".order").removeClass(
-          "order--fadeout");
-  } 
+    $(".order").removeClass("order--fadeout");
+  }
+  
+  // let divPosition = $(".div").position().top + $(".div").height(); //---------------------
+  
+  if (scroll > (cleaningPosition.top)) {
+    $(".cleaning__content").addClass("cleaning__content--active");
+    // $('html,body').delay(3000).animate({scrollTop: divPosition},2000);//-------------------------
+    // $(window).scrollTo(divPosition);//-----------------------
+    // $(document).animate({scrollTop: $(document).height()},2000);//--------------------------------
+    // $(document).scrollTop(cleaningPositionX);//--------------------------------
+
+  }
+  else if (scroll > (cleaningPosition.top - 500)) {
+    $(".cleaning__content").removeClass("cleaning__content--active");
+  }
 })
-// --------------------------------------------------------------------
+// --------------------------order-btn------------------------------------------
 $('.order').mousemove(function (e) {
  
-  var i = $(".order__circle"),
-      s = e.pageX - i.offset().left,
-      o = e.pageY - i.offset().top;
+  
+  let i = $(".order__circle"),
+  s = e.pageX - i.offset().left,
+  o = e.pageY - i.offset().top;
   
   TweenMax.to($('.order__circle'), .3, {
     x: (s - i.width() / 2) / i.width() * 55,
     y: (o - i.height() / 2) / i.height() * 55,
+    rotate: 15,
     // scale: 1.2,
-    // ease: Power2.easeOut
+
+
+    ease: Power2.easeOut
   })
   
   TweenMax.to($('.order__text'), .3, {
@@ -43,15 +59,17 @@ $('.order').mousemove(function (e) {
 });
 
 $('.order').mouseleave(function (e) {
- 
-  var i = $(".order__circle"),
-      s = e.pageX - i.offset().left,
-      o = e.pageY - i.offset().top;
+  
+  
+  let i = $(".order__circle"),
+  s = e.pageX - i.offset().left,
+  o = e.pageY - i.offset().top;
   TweenMax.to($('.order__circle'), .3, {
     x: 0,
     y: 0,
+    rotate: 0,
     // scale: 1,
-    // ease: Power2.easeOut
+    ease: Power2.easeOut
   })
   
   TweenMax.to($('.order__text'), .3, {
@@ -61,6 +79,7 @@ $('.order').mouseleave(function (e) {
   })
   
 });
+
 // ---------------------------------------------toggle-place-item-----------------------------------------------------------
 $('.header__place-item').on('click', function(e) {
   e.preventDefault()
@@ -88,17 +107,25 @@ $('.menu-btn, .menu__item-link').on('click', function() {
  }
 });
 //--------------------------------------------advant-slider-------------------------------------------------------
-if ($(window).width() < 51) {
-  $('.advant__list').slick({
+// if ($(document).width() < 451) {
+//   $('.advant__list').slick({
    
-  });
-}
+//   });
+// }
+// else $('.advant__list').slick('unslick');
 // -----------------------------------------------cleaning--------------------------------------------------------
-$('.cleaning__room-link').on('click', function(e) {
-  e.preventDefault()
-});
-
+let cleaningImgWidth = $('.cleaning__img').width();
+let cleaningImgHeight = cleaningImgWidth * .576;
+$('.cleaning__img').height(cleaningImgHeight);
+$('.cleaning__images').height(cleaningImgHeight);
+// -----------------------------
 $('.cleaning__room-item').on('click', function() {
-  $('.cleaning__room-item--active').removeClass('cleaning__room-item--active');
+  $('.cleaning__room-item').removeClass('cleaning__room-item--active');
   $(this).addClass('cleaning__room-item--active');
 });
+
+$('.cleaning__room-link').on('click', function() {
+  $('.cleaning__images-item').removeClass('cleaning__images-item--active');
+  $($(this).attr('href')).addClass('cleaning__images-item--active');
+});
+// -------------------------------
