@@ -10,16 +10,23 @@ $(window).scroll(function(){
   }
   
   let cleaningPosition = $(".cleaning").position(); 
-  if (scroll > (cleaningPosition.top - 150)) { 
+  // let bottom = $(".cleaning__images").position() + $(".cleaning__images").height(); //----------------------
+    if (scroll > (cleaningPosition.top - 150)) { 
     $(".order").addClass("order--fadeout");
   }
   else {
-      $(".order").removeClass("order--fadeout");
+    $(".order").removeClass("order--fadeout");
   }
-
+  
+  // let divPosition = $(".div").position().top + $(".div").height(); //---------------------
+  
   if (scroll > (cleaningPosition.top)) {
     $(".cleaning__content").addClass("cleaning__content--active");
-    // $('html,body').animate({scrollTop: document.body.scrollHeight},"slow");
+    // $('html,body').delay(3000).animate({scrollTop: divPosition},2000);//-------------------------
+    // $(window).scrollTo(divPosition);//-----------------------
+    // $(document).animate({scrollTop: $(document).height()},2000);//--------------------------------
+    // $(document).scrollTop(cleaningPositionX);//--------------------------------
+
   }
   else if (scroll > (cleaningPosition.top - 500)) {
     $(".cleaning__content").removeClass("cleaning__content--active");
@@ -100,17 +107,25 @@ $('.menu-btn, .menu__item-link').on('click', function() {
  }
 });
 //--------------------------------------------advant-slider-------------------------------------------------------
-if ($(window).width() < 51) {
-  $('.advant__list').slick({
+// if ($(document).width() < 451) {
+//   $('.advant__list').slick({
    
-  });
-}
+//   });
+// }
+// else $('.advant__list').slick('unslick');
 // -----------------------------------------------cleaning--------------------------------------------------------
-$('.cleaning__room-link').on('click', function(e) {
-  e.preventDefault()
-});
-
+let cleaningImgWidth = $('.cleaning__img').width();
+let cleaningImgHeight = cleaningImgWidth * .576;
+$('.cleaning__img').height(cleaningImgHeight);
+$('.cleaning__images').height(cleaningImgHeight);
+// -----------------------------
 $('.cleaning__room-item').on('click', function() {
-  $('.cleaning__room-item--active').removeClass('cleaning__room-item--active');
+  $('.cleaning__room-item').removeClass('cleaning__room-item--active');
   $(this).addClass('cleaning__room-item--active');
 });
+
+$('.cleaning__room-link').on('click', function() {
+  $('.cleaning__images-item').removeClass('cleaning__images-item--active');
+  $($(this).attr('href')).addClass('cleaning__images-item--active');
+});
+// -------------------------------
