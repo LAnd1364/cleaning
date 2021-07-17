@@ -285,6 +285,19 @@
 // ----------------------------------------------------450----------------------------------------------------
 @media (max-width: 450px) {
   .advant {
-
+    padding: 15px 0px 45px;
+    &__list {
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 0;
+    }
+    &__item-text {
+      padding: 30px;
+    }
+  }
+  .swiper-container-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+    bottom: 20px;
+  }
+  .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-main {
+    background-color: $accent;
   }
 }
