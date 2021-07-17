@@ -106,13 +106,6 @@ $('.menu-btn, .menu__item-link').on('click', function() {
 
  }
 });
-//--------------------------------------------advant-slider-------------------------------------------------------
-// if ($(document).width() < 451) {
-//   $('.advant__list').slick({
-   
-//   });
-// }
-// else $('.advant__list').slick('unslick');
 // -----------------------------------------------cleaning--------------------------------------------------------
 let cleaningImgWidth = $('.cleaning__img').width();
 let cleaningImgHeight = cleaningImgWidth * .576;
@@ -128,4 +121,16 @@ $('.cleaning__room-link').on('click', function() {
   $('.cleaning__images-item').removeClass('cleaning__images-item--active');
   $($(this).attr('href')).addClass('cleaning__images-item--active');
 });
-// -------------------------------
+//--------------------------------------------advant-slider-------------------------------------------------------
+if ($(document).width() < 451) {
+  const swiperAdvant = new Swiper('.advant', {
+    spaceBetween:  10, 
+    speed: 800, 
+    touchAngle: 15,
+    
+    pagination: {
+      el: '.swiper-pagination',
+     dynamicBullets: true,
+    },
+  });
+}
