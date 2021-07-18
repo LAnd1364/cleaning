@@ -118,6 +118,8 @@ $('.cleaning__room-item').on('click', function() {
 });
 
 $('.cleaning__room-link').on('click', function() {
+  $('.cleaning__room-link').removeClass('cleaning__room-link--active');
+  $(this).addClass('cleaning__room-link--active');
   $('.cleaning__images-item').removeClass('cleaning__images-item--active');
   $($(this).attr('href')).addClass('cleaning__images-item--active');
 });
@@ -133,4 +135,7 @@ if ($(document).width() < 451) {
      dynamicBullets: true,
     },
   });
+}
+else if ($(document).width() > 451) {
+  $('.swiper-container').removeClass('swiper-container')
 }
