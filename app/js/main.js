@@ -1,11 +1,11 @@
-// -----------------------------------------toggle-place-item----------------------------------------
+// ----------------------------------------- toggle-place-item ----------------------------------------
 $('.header__place-item').on('click', function(e) {
   e.preventDefault()
   $('.header__place-item').removeClass('header__place-item--active');
   $(this).addClass('header__place-item--active');
 });
 
-// -------------------------------------------sticky order-btn----------------------------------------
+// ------------------------------------------- sticky order-btn ----------------------------------------
 $('.order').mousemove(function (e) {
    
   let i = $(".order__circle"),
@@ -48,12 +48,12 @@ $('.order').mouseleave(function (e) {
   
 });
 
-// -------------------------------------------animation on scroll------------------------------------------------
+// ------------------------------------------- animation on scroll ------------------------------------------------
 $(window).scroll(function(){
   let scroll = $(window).scrollTop();
   let cleaningPosition = $(".cleaning").position(); 
 
-  //-----------scale order-btn & move up advant__item-----------
+  //----------- scale order-btn & move up advant__item -----------
   if(scroll > 10){
     $('.order').addClass('order--scale');
     $('.advant__item').addClass('advant__item--up')
@@ -62,7 +62,7 @@ $(window).scroll(function(){
     $('.order').removeClass('order--scale');
   }
   
-  //----------------fade order0btn-------------------
+  //---------------- fade order0btn -------------------
     if (scroll > (cleaningPosition.top - 150)) { 
     $(".order").addClass("order--fadeout");
   }
@@ -70,7 +70,31 @@ $(window).scroll(function(){
     $(".order").removeClass("order--fadeout");
   }
 
-  //-----------cleaning section--------------------
+  //----------- cleaning section --------------------
+  //---------------------------- test Start -----------------
+
+  
+  // if($(window).scrollTop() + $(window).height() > $(document).height() -170) {
+  // if($(window).scrollTop() + $(window).height() <= $(document).height() -170) {
+  //   $(".cleaning__content").removeClass("cleaning__content--active");
+  
+  //   $('.cleaning__images-item').width( $('.container').width() * .76 );
+  //   $('.cleaning__img').height( $('.cleaning__images-item').width() * .576 );
+  //   $('.cleaning__images-item').height( $('.cleaning__img').height() );
+  //   $('.cleaning__images').height( $('.cleaning__img').height() );
+  // }
+  // else {
+  //   $(".cleaning__content").addClass("cleaning__content--active");
+  
+  //   $('.cleaning__img').height( $(window).height() );
+  //   $('.cleaning__images-item').height( $(window).height() );
+  //   $('.cleaning__images').height( $(window).height() );
+  //   $('.cleaning__images-item').width( $('.cleaning__img').height() * 1.33125 );
+  //   $('.cleaning__images').width( $('.cleaning__img').height() * 1.33125 );
+  //   $('.cleaning__room-list').width( $('.container').width() - 60 - $('.cleaning__images-item').width() );
+  // }
+
+  //---------------------------- test End -----------------
   if($(window).scrollTop() + $(window).height() > $(document).height() -170) {
     $(".cleaning__content").addClass("cleaning__content--active");
   }
@@ -79,11 +103,11 @@ $(window).scroll(function(){
   }
 })
 
-//--------------------------------------------advant-slider-------------------------------------------------------
+//-------------------------------------------- advant-slider ----------------------------------------------------
 if ($(document).width() < 451) {
   const swiperAdvant = new Swiper('.advant', {
     spaceBetween:  10, 
-    speed: 800, 
+    speed: 500, 
     touchAngle: 15,
     
     pagination: {
@@ -93,11 +117,9 @@ if ($(document).width() < 451) {
   });
 }
 
-// -----------------------------------------------cleaning--------------------------------------------------------
+// ----------------------------------------------- cleaning ------------------------------------------------------
 let cleaningImgWidth = $('.cleaning__img').width();
-let cleaningImgHeight = cleaningImgWidth * .576;
-$('.cleaning__img').height(cleaningImgHeight);
-$('.cleaning__images').height(cleaningImgHeight);
+$('.cleaning__img').height(cleaningImgWidth * .576);
 // -----------------------------
 $('.cleaning__room-item').on('click', function() {
   $('.cleaning__room-item').removeClass('cleaning__room-item--active');
@@ -111,7 +133,7 @@ $('.cleaning__room-link').on('click', function() {
   $($(this).attr('href')).addClass('cleaning__images-item--active');
 });
 
-// ---------------------------------------------activate-menu-----------------------------------------------------------
+// --------------------------------------------- activate-menu -----------------------------------------------------------
 $('.menu-btn-pre').hover
 (function() {
 $('.header__top').addClass('header__top--active');
@@ -128,3 +150,4 @@ $('.menu-btn, .menu__item-link').on('click', function() {
     $('.menu').toggleClass('menu--active');
   }
 });
+
