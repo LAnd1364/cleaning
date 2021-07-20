@@ -196,6 +196,9 @@
           max-width: 100%;
           transform: translateX(0);
         }
+        .cleaning__img {
+          height: calc(100vh - 98px) !important;
+        }
       }
     }
     ul.cleaning__room-list {
@@ -204,6 +207,7 @@
       width: 100%;
       height: fit-content;
       padding: 28px 32px;
+      transform: translateX(0);
       &::before {
         display: none;
       }
@@ -225,6 +229,9 @@
     }
     &__room-link {
       font-size: 34px;
+    }
+    &__images-item {
+      top: 98px;
     }
   }
 }
@@ -304,6 +311,13 @@
     &__title {
       font-size: 42px;
     }
+    &__content {
+      &--active {
+        .cleaning__img {
+          height: calc(100vh - 84px) !important;
+        }
+      }
+    }
     ul.cleaning__room-list {
       padding: 23px 32px;
     }
@@ -319,6 +333,9 @@
     }
     &__room-link {
       font-size: 30px;
+    }
+    &__images-item {
+      top: 84px;
     }
   }
 }
@@ -387,6 +404,13 @@
     }
   }
   .cleaning {
+    &__content {
+      &--active {
+        .cleaning__img {
+          height: calc(100vh - 98px) !important;
+        }
+      }
+    }
     ul.cleaning__room-list {
       flex-wrap: wrap;
       padding: 12px 18px;
@@ -430,6 +454,9 @@
         opacity: 1;
         transform: translateX(15px);
       }
+    }
+    &__images-item {
+      top: 98px;
     }
   }
 }
@@ -512,6 +539,13 @@
     &__text {
       line-height: 1.2;
     }
+    &__content {
+      &--active {
+        .cleaning__img {
+          height: calc(100vh - 87px) !important;
+        }
+      }
+    }
     ul.cleaning__room-list {
       padding: 8px 12px 5px;
     }
@@ -530,6 +564,9 @@
     &__room-link {
       font-size: 26px;
       line-height: 1.4;
+    }
+    &__images-item {
+      top: 87px;
     }
   }
 }
