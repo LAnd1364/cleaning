@@ -358,13 +358,16 @@
         z-index: 5;
       }
       .cleaning__room-list {
-        width: 26%;
+        width: calc( 100vw - 100vh * 1.374 );
         transform: translateX(0);
         transition: .5s .3s;
       }
+      .cleaning__images {
+        height: 100vh;
+      }
       .cleaning__images-item {
-        max-width: 74%;
-        transform: translateX(17.5%);
+        max-width: calc( 100vh * 1.33125 );
+        transform: translateX(calc( (100vw - 100vh * 1.37) / 2 ));//------- 1.33125 ------
         transition: transform .5s .3s, max-width .5s .3s, margin 0s 1s;
         &--active {
           transition: transform .5s .3s, max-width .5s .3s, margin 1s 0s;
@@ -482,39 +485,64 @@
     opacity: 0;
     position: absolute;
     &--fan {
-      bottom: 68%;
+      bottom: 63%;
       right: 67%;
       transition: .4s .8s;
     }
     &--fridge {
-      bottom: 52%;
+      bottom: 50%;
       right: 38%;
       transition: .4s 1.1s;
     }
     &--cooker {
-      bottom: 42%;
+      bottom: 40%;
       right: 73%;
       transition: .4s 1.4s;
     }
     &--dustbin {
-      bottom: 39%;
+      bottom: 37%;
       right: 53%;
       transition: .4s 1.7s;
     }
     &--dishes {
-      bottom: 36%;
+      bottom: 34%;
       right: 19%;
       transition: .4s 2s;
     }
     &--tabletop {
-      bottom: 25%;
+      bottom: 24%;
       right: 42%;
       transition: .4s 2.3s;
     }
     &--floor {
-      bottom: 8%;
+      bottom: 7%;
       right: 69%;
       transition: .4s 2.5s;
+    }
+    &--mirror {
+      bottom: 66%;
+      right: 67%;
+      transition: .4s .8s;
+    }
+    &--tile {
+      bottom: 49%;
+      right: 31%;
+      transition: .4s 1.1s;
+    }
+    &--furn {
+      bottom: 7%;
+      right: 61%;
+      transition: .4s 1.4s;
+    }
+    &--bowl {
+      bottom: 9%;
+      right: 37%;
+      transition: .4s 1.7s;
+    }
+    &--bath {
+      bottom: 18%;
+      right: 14%;
+      transition: .4s 2s;
     }
     &::before {
       content: '';
@@ -582,4 +610,9 @@
 }
 
 
+
+
+
 @import 'media';
+
+
