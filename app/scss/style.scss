@@ -358,9 +358,15 @@
         z-index: 5;
       }
       .cleaning__room-list {
-        width: calc( 100vw - 100vh * 1.374 );
+        width: calc( 100vw - 100vh * 1.374 );//---------------------
         transform: translateX(0);
         transition: .5s .3s;
+        &--ratio-1-8 {
+          width: calc( 100vw - 100vh * 1.18 );//---------------------
+        }
+        &--ratio-1-5 {
+          width: calc( 100vw - 100vh * 1.01 );//---------------------
+        }
       }
       .cleaning__images {
         height: 100vh;
@@ -369,6 +375,14 @@
         max-width: calc( 100vh * 1.33125 );
         transform: translateX(calc( (100vw - 100vh * 1.37) / 2 ));//------- 1.33125 ------
         transition: transform .5s .3s, max-width .5s .3s, margin 0s 1s;
+        &--ratio-1-8 {
+          max-width: calc( 100vh * 1.18 );
+          transform: translateX(calc( (100vw - 100vh * 1.18) / 2 ));
+        }
+        &--ratio-1-5 {
+          max-width: calc( 100vh * 1.01 );
+          transform: translateX(calc( (100vw - 100vh * 1.01) / 2 ));
+        }
         &--active {
           transition: transform .5s .3s, max-width .5s .3s, margin 1s 0s;
           .cleaning__img {
@@ -544,16 +558,93 @@
       right: 14%;
       transition: .4s 2s;
     }
+    &--ratio-1-8 {
+      &.cleaning__img-pointer--fan {
+        right: 76%;
+      }
+      &.cleaning__img-pointer--fridge {
+        right: 43%;
+      }
+      &.cleaning__img-pointer--cooker {
+        right: 82%;
+      }
+      &.cleaning__img-pointer--dustbin {
+        right: 60%;
+      }
+      &.cleaning__img-pointer--dishes {
+        right: 21%;
+      }
+      &.cleaning__img-pointer--tabletop {
+        right: 47%;
+      }
+      &.cleaning__img-pointer--floor {
+        right: 77%;
+      }
+      &.cleaning__img-pointer--mirror {
+        right: 76%;
+      }
+      &.cleaning__img-pointer--tile {
+        right: 36%;
+      }
+      &.cleaning__img-pointer--furn {
+        right: 70%;
+      }
+      &.cleaning__img-pointer--bowl {
+        right: 42%;
+      }
+      &.cleaning__img-pointer--bath {
+        right: 14%;
+      }
+    }
+    &--ratio-1-5 {
+      &.cleaning__img-pointer--fan {
+        right: 89%;
+      }
+      &.cleaning__img-pointer--fridge {
+        right: 50%;
+      }
+      &.cleaning__img-pointer--cooker {
+        right: 92%;
+      }
+      &.cleaning__img-pointer--dustbin {
+        right: 70%;
+      }
+      &.cleaning__img-pointer--dishes {
+        right: 25%;
+      }
+      &.cleaning__img-pointer--tabletop {
+        right: 55%;
+      }
+      &.cleaning__img-pointer--floor {
+        right: 89%;
+      }
+      &.cleaning__img-pointer--mirror {
+        right: 89%;
+      }
+      &.cleaning__img-pointer--tile {
+        right: 41%;
+      }
+      &.cleaning__img-pointer--furn {
+        right: 81%;
+      }
+      &.cleaning__img-pointer--bowl {
+        right: 49%;
+      }
+      &.cleaning__img-pointer--bath {
+        right: 17%;
+      }
+    }
     &::before {
       content: '';
-      width: 50px;
-      height: 50px;
+      width: 166%;
+      height: 166%;
       background-color: $accent;
       opacity: 0.2;
       border-radius: 50%;
       position: absolute;
-      left: -10px;
-      top: -10px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       transition: all .3s;
     }
     &::after {
@@ -562,8 +653,9 @@
       height: 12px;
       background-image: url(../images/icons/plus.svg);
       position: absolute;
-      top: 9px;
-      left: 9px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       transition: all .3s;
     }
     &:hover {
@@ -571,7 +663,7 @@
         opacity: 0;
       }
       &::after {
-        transform: rotate(45deg);
+        transform: translate(-50%, -50%) rotate(45deg);
       }
       & .pointer-tooltip {
         opacity: 1;

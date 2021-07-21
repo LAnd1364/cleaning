@@ -71,30 +71,6 @@ $(window).scroll(function(){
   }
 
   //----------- cleaning section --------------------
-  //---------------------------- test Start -----------------
-
-  
-  // if($(window).scrollTop() + $(window).height() > $(document).height() -170) {
-  // if($(window).scrollTop() + $(window).height() <= $(document).height() -170) {
-  //   $(".cleaning__content").removeClass("cleaning__content--active");
-  
-  //   $('.cleaning__images-item').width( $('.container').width() * .76 );
-  //   $('.cleaning__img').height( $('.cleaning__images-item').width() * .576 );
-  //   $('.cleaning__images-item').height( $('.cleaning__img').height() );
-  //   $('.cleaning__images').height( $('.cleaning__img').height() );
-  // }
-  // else {
-  //   $(".cleaning__content").addClass("cleaning__content--active");
-  
-  //   $('.cleaning__img').height( $(window).height() );
-  //   $('.cleaning__images-item').height( $(window).height() );
-  //   $('.cleaning__images').height( $(window).height() );
-  //   $('.cleaning__images-item').width( $('.cleaning__img').height() * 1.33125 );
-  //   $('.cleaning__images').width( $('.cleaning__img').height() * 1.33125 );
-  //   $('.cleaning__room-list').width( $('.container').width() - 60 - $('.cleaning__images-item').width() );
-  // }
-
-  //---------------------------- test End -----------------
   if($(window).scrollTop() + $(window).height() > $(document).height() -170) {
     $(".cleaning__content").addClass("cleaning__content--active");
   }
@@ -132,6 +108,17 @@ $('.cleaning__room-link').on('click', function() {
   $('.cleaning__images-item').removeClass('cleaning__images-item--active');
   $($(this).attr('href')).addClass('cleaning__images-item--active');
 });
+
+if ( $(window).width() / $(window).height() < 1.809 && $(window).width() / $(window).height() > 1.528 ) {
+  $('.cleaning__images-item').addClass('cleaning__images-item--ratio-1-8');
+  $('.cleaning__room-list').addClass('cleaning__room-list--ratio-1-8');
+  $('.cleaning__img-pointer').addClass('cleaning__img-pointer--ratio-1-8');
+}
+else if ( $(window).width() / $(window).height() < 1.528 ) {
+  $('.cleaning__images-item').addClass('cleaning__images-item--ratio-1-5');
+  $('.cleaning__room-list').addClass('cleaning__room-list--ratio-1-5');
+  $('.cleaning__img-pointer').addClass('cleaning__img-pointer--ratio-1-5');
+}
 
 // --------------------------------------------- activate-menu -----------------------------------------------------------
 $('.menu-btn-pre').hover
