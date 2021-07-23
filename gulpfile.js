@@ -56,7 +56,7 @@ function images() {
           ]
       })
     ]))
-   .pipe(dest('dist/images'))
+   .pipe(dest('docs/images'))
 }
 
 function nunjucks() {
@@ -72,7 +72,7 @@ function build() {
       'app/css/style.min.css',
       'app/js/main.min.js'       
    ], {base: 'app'})
-   .pipe(dest('dist'))
+   .pipe(dest('docs'))
 }
 
 function cleanDist() {
