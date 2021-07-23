@@ -61,7 +61,15 @@
     }
     &__images-item {
       max-width: 80%;
-    }  
+    }
+    &__img-pointer {
+      width: 26px;
+      height: 26px;
+      &::after {
+        transform: translate(-50%, -50%) scale(.84);
+
+      }
+    }
   }
 }
 // ----------------------------------------------------1200----------------------------------------------------
@@ -138,7 +146,7 @@
       padding: 0 0 10px 20px;
     }
     &__room-item {
-      font-size: 38px;
+      font-size: 37px;
       &--active {
         transform: translateX(12px);
       }
@@ -191,13 +199,24 @@
       &::before {
         display: none;
       }
+      .cleaning__images {
+        height: 60vw !important;
+      }
+      .cleaning__img {
+        width: 100%;
+        height: 60vw !important;
+      }
       &--active {
+        .cleaning__images {
+          height: 60vw;
+        }
         .cleaning__images-item {
           max-width: 100%;
           transform: translateX(0);
         }
         .cleaning__img {
-          height: calc(100vh - 98px) !important;
+          width: 100%;
+          height: 60vw !important;
         }
       }
     }
@@ -232,6 +251,56 @@
     }
     &__images-item {
       top: 98px;
+    }
+    &__img-pointer {
+      &--fan {
+        bottom: 79%;
+        right: 67%;
+      }
+      &--fridge {
+        bottom: 60%;
+        right: 38%;
+      }
+      &--cooker {
+        bottom: 49%;
+        right: 73%;
+      }
+      &--dustbin {
+        bottom: 45%;
+        right: 53%;
+      }
+      &--dishes {
+        bottom: 42%;
+        right: 19%;
+      }
+      &--tabletop {
+        bottom: 29%;
+        right: 42%;
+      }
+      &--floor {
+        bottom: 9%;
+        right: 68%;
+      }
+      &--mirror {
+        bottom: 80%;
+        right: 67%;
+      }
+      &--tile {
+        bottom: 59%;
+        right: 31%;
+      }
+      &--furn {
+        bottom: 9%;
+        right: 61%;
+      }
+      &--bowl {
+        bottom: 11%;
+        right: 37%;
+      }
+      &--bath {
+        bottom: 20%;
+        right: 14%;
+      }
     }
   }
 }
@@ -310,13 +379,6 @@
     }
     &__title {
       font-size: 42px;
-    }
-    &__content {
-      &--active {
-        .cleaning__img {
-          height: calc(100vh - 84px) !important;
-        }
-      }
     }
     ul.cleaning__room-list {
       padding: 23px 32px;
@@ -404,13 +466,6 @@
     }
   }
   .cleaning {
-    &__content {
-      &--active {
-        .cleaning__img {
-          height: calc(100vh - 98px) !important;
-        }
-      }
-    }
     ul.cleaning__room-list {
       flex-wrap: wrap;
       padding: 12px 18px;
@@ -458,6 +513,10 @@
     &__images-item {
       top: 98px;
     }
+    &__img-pointer {
+      width: 24px;
+      height: 24px;
+    }
   }
 }
 // ----------------------------------------------------590----------------------------------------------------
@@ -493,6 +552,10 @@
     &__images-item {
       max-width: 100%;
     }
+    &__img-pointer {
+      width: 22px;
+      height: 22px;
+    }
   }
 }
 // ----------------------------------------------------500----------------------------------------------------
@@ -504,10 +567,15 @@
     }
     &__item-inner {
       height: 295px;
-  }
+    }
     &__item-title {
       font-size: 22px;
       line-height: 1.2;
+    }
+  }
+  .cleaning {
+    .pointer-tooltip {
+      padding: 6px 8px;
     }
   }
 }
@@ -539,13 +607,6 @@
     &__text {
       line-height: 1.2;
     }
-    &__content {
-      &--active {
-        .cleaning__img {
-          height: calc(100vh - 87px) !important;
-        }
-      }
-    }
     ul.cleaning__room-list {
       padding: 8px 12px 5px;
     }
@@ -567,6 +628,10 @@
     }
     &__images-item {
       top: 87px;
+    }
+    &__img-pointer {
+      width: 20px;
+      height: 20px;
     }
   }
 }
